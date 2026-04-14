@@ -1,31 +1,39 @@
 package com.calculator.model;
 
 public class CalculationRequest {
-    private double firstNumber;
-    private double secondNumber;
+    private double num1;
+    private double num2;
+    private String operation;
 
-    // Constructors
     public CalculationRequest() {}
 
-    public CalculationRequest(double firstNumber, double secondNumber) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
+    public CalculationRequest(double num1, double num2, String operation) {
+        this.num1 = num1;
+        this.num2 = num2;
+        this.operation = operation;
     }
 
-    // Getters and setters
-    public double getFirstNumber() {
-        return firstNumber;
+    public double getNum1() {
+        return num1;
     }
 
-    public void setFirstNumber(double firstNumber) {
-        this.firstNumber = firstNumber;
+    public void setNum1(double num1) {
+        this.num1 = num1;
     }
 
-    public double getSecondNumber() {
-        return secondNumber;
+    public double getNum2() {
+        return num2;
     }
 
-    public void setSecondNumber(double secondNumber) {
-        this.secondNumber = secondNumber;
+    public void setNum2(double num2) {
+        this.num2 = num2;
+    }
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
     }
 }

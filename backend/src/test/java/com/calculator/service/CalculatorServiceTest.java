@@ -1,25 +1,34 @@
 package com.calculator.service;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
 class CalculatorServiceTest {
 
-    @Autowired
-    private CalculatorService calculatorService;
+    private final CalculatorService calculatorService = new CalculatorService();
 
     @Test
     void testAdd() {
-        double result = calculatorService.add(5, 3);
-        assertEquals(8, result, 0.001);
+        assertEquals(5.0, calculatorService.add(2.0, 3.0));
     }
 
     @Test
     void testSubtract() {
-        double result = calculatorService.subtract(10, 4);
-        assertEquals(6, result, 0.001);
+        assertEquals(1.0, calculatorService.subtract(3.0, 2.0));
+    }
+
+    @Test
+    void testMultiply() {
+        assertEquals(6.0, calculatorService.multiply(2.0, 3.0));
+    }
+
+    @Test
+    void testDivide() {
+        assertEquals(2.0, calculatorService.divide(6.0, 3.0));
+    }
+
+    @Test
+    void testDivideByZero() {
+        assertThrows(IllegalArgumentException.class, () -> calculatorService.divide(6.0, 0.0));
     }
 }
