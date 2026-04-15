@@ -1,0 +1,13 @@
+name: calculator-dev-sandbox
+spec:
+  cluster: skp-local-test
+  local:
+    # This maps the "calculator-backend" service to your local machine
+    - name: calculator-backend
+      from:
+        kind: Deployment
+        name: calculator-backend
+        namespace: default
+      mappings:
+        - port: 8080        # Cluster-side port
+          toLocal: "8080"     # Your local Spring Boot port

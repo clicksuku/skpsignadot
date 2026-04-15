@@ -17,6 +17,7 @@ spec:
       containers:
         - name: backend
           image: calculator-backend:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 8080
           env:
